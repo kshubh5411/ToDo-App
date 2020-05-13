@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">To Do</string>
+    <string name="default_category">Default</string>
+    <string name="finish_category">Finished</string>
+    <string name="delete">Delete</string>
+    <string name="date">Date</string>
+    <string name="time">Time</string>
+    <string name="repeat">Repeat</string>
+    <string name="repeat_no">Repetition Interval </string>
+    <string name="repeat_type">Type of Repetitions</string>
+    <string name="repeatOff">Off</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

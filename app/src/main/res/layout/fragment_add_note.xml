@@ -1,0 +1,204 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.example.todoapp.Fragments.AddNoteFragment">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/title_const"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <EditText
+                android:id="@+id/edit_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="Title"
+                android:paddingStart="5dp"
+                android:inputType="textMultiLine"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/white"
+                android:textColorHint="@color/light_grey"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.9" />
+
+            <ImageView
+                android:id="@+id/speak_title"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginTop="16dp"
+                android:background="?selectableItemBackground"
+                android:src="@android:drawable/ic_btn_speak_now"
+                android:tint="@color/red_light1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/edit_title"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.722"
+                app:layout_constraintWidth_percent="0.1" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_marginTop="30dp"
+            android:id="@+id/descriptionConst"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title_const">
+
+
+            <EditText
+                android:id="@+id/edit_description"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Description"
+                android:paddingStart="5dp"
+                android:backgroundTint="@color/white"
+                android:inputType="textMultiLine"
+                android:textColor="@color/white"
+                android:textColorHint="@color/light_grey"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.9" />
+
+            <ImageView
+                android:id="@+id/speak_description"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginBottom="8dp"
+                android:background="?selectableItemBackground"
+                android:src="@android:drawable/ic_btn_speak_now"
+                android:tint="@color/red_light1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/edit_description"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.722" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:id="@+id/priorityTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="5dp"
+            android:text="Choose Priority"
+            android:textColor="@color/light_grey"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/category_spinner" />
+
+
+        <NumberPicker
+            android:layout_marginTop="5dp"
+            android:id="@+id/number_picker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:background="@color/color_text_red"
+            android:backgroundTint="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="276dp"
+            app:layout_constraintTop_toBottomOf="@id/priorityTextView"/>
+
+        <TextView
+            android:layout_marginTop="30dp"
+            android:id="@+id/categoryHint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Choose Category"
+            app:layout_constraintTop_toBottomOf="@id/descriptionConst"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textColor="@color/light_grey"
+            android:paddingStart="5dp"/>
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/category_spinner"
+            style="@style/spinnerTheme"
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:backgroundTint="@color/white"
+            android:foregroundTint="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="118dp"
+            app:layout_constraintTop_toBottomOf="@id/categoryHint"/>
+
+        <Button
+            android:id="@+id/SaveButton"
+            style="@style/Widget.MaterialComponents.Button.Icon"
+            android:layout_width="130dp"
+            android:layout_height="70dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:text="Save"
+            android:backgroundTint="@color/fab_pressed"
+            app:cornerRadius="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/number_picker" />
+
+        <ProgressBar
+            android:id="@+id/progress_bar_add_note"
+            android:layout_width="8dp"
+            android:layout_height="6dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/category_spinner" />
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/starred1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="25dp"
+            android:clickable="true"
+            android:layout_marginEnd="10sp"
+            app:fab_colorNormal="@color/red_light1"
+            app:fab_colorPressed="@color/red_light1"
+            app:fab_icon="@drawable/ic_notifications_on_white_24dp"
+            app:fab_size="normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/category_spinner" />
+
+        <TextView
+            android:id="@+id/alarmStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:paddingEnd="5dp"
+            android:text="Alarm Off"
+            android:textColor="@color/light_grey"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/starred1" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
